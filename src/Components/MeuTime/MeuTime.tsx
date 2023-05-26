@@ -7,7 +7,7 @@ interface MeuTimeProps {
 
 const MeuTime: React.FC<MeuTimeProps> = ({ time }) => {
     const [nomeTime, setNomeTime] = useState(time);
-    const [mostrarNomeTime, setMostrarNomeTime] = useState(false);
+    const [mostrarNomeTime, setMostrarNomeTime] = useState(true);
 
     const handleButtonClick = () => {
         setMostrarNomeTime(true)
@@ -22,7 +22,7 @@ const MeuTime: React.FC<MeuTimeProps> = ({ time }) => {
             />
             {mostrarNomeTime &&
                 <>
-                    <Button testID="botaoMostrarTime" title="Exibir nome do time" onPress={handleButtonClick} />
+                    <Button testID='botaoMostrarTime' title="Exibir nome do time" onPress={handleButtonClick} />
                     <Text>{nomeTime}</Text>
                 </>
             }

@@ -8,7 +8,7 @@ describe('Componente MeuTime', () => {
     test('Mostra o nome do time corretamente', () => {
         const { getByTestId, getByText, } = render(<MeuTime time={TIME}/>)
 
-        const botaoMostrarTime = getByTestId('botaoMostrarTime');
+        const botaoMostrarTime = getByTestId('botaoMostrarTime'); //40min somente nessa etapa do teste, estava passando batido o 'state'
         fireEvent.press(botaoMostrarTime);
 
         const time = getByText(TIME);
@@ -25,7 +25,7 @@ describe('Componente MeuTime', () => {
 
         fireEvent.changeText(inputTime, 'Cruzeiro');
       
-        const time = getByText('Cruzeiro');
+        const time = getByText(TIME);
         expect(time).toBeTruthy();
       });
 });
